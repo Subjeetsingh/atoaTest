@@ -8,7 +8,10 @@ import java.time.Duration;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+
 import com.atoa.qa.base.TestBase;
 import com.atoa.qa.pages.TipPage; 
 import com.atoa.qa.pages.QRCodePage;
@@ -21,7 +24,7 @@ public class TipPageTest extends TestBase {
         super();
     }
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         initialization();
         tipPage = new TipPage(); 
@@ -75,7 +78,7 @@ public class TipPageTest extends TestBase {
         }
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         driver.quit();
     }

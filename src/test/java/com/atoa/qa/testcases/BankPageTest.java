@@ -7,7 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.atoa.qa.base.TestBase;
@@ -23,7 +25,7 @@ public class BankPageTest extends TestBase {
     private static final double[] TIP_VALUES = {1, 2, 5}; 
     private static final double INITIAL_AMOUNT_VALUE = 63.00;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         initialization();
         tipPage = new TipPage(); 
@@ -69,7 +71,7 @@ public class BankPageTest extends TestBase {
         }
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         driver.quit();
     }

@@ -3,7 +3,9 @@
 package com.atoa.qa.testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.atoa.qa.base.TestBase;
@@ -16,7 +18,7 @@ public class QRCodePageTest extends TestBase {
         super();
     }
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         initialization();
         qrCodePage = new QRCodePage();
@@ -70,7 +72,7 @@ public class QRCodePageTest extends TestBase {
         Assert.assertTrue(qrCodePage.isHelpLinkVisible(), "Help link is not visible or clickable.");
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         driver.quit();
     }
